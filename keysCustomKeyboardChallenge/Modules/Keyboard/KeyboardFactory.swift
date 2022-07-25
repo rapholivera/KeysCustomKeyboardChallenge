@@ -10,7 +10,8 @@ import UIKit
 class KeyboardFactory {
     // MARK: - Life Cycle
     class func build() -> KeyboardView<DefaultKeyboardViewModel> {
-        let viewModel = DefaultKeyboardViewModel()
+        let repository = KeyboardDataRepository()
+        let viewModel = DefaultKeyboardViewModel(repository: repository)
         return KeyboardView(keyboardViewModel: viewModel)
     }
 }

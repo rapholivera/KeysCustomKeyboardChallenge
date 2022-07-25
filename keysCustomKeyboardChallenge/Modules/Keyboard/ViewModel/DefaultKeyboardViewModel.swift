@@ -7,7 +7,16 @@
 
 import UIKit
 
-class DefaultKeyboardViewModel: KeyboardViewModel {
+class DefaultKeyboardViewModel {
+    
+    private let repository: KeyboardRepository
+    
+    init(repository: KeyboardRepository) {
+        self.repository = repository
+    }
+}
+
+extension DefaultKeyboardViewModel: KeyboardViewModel {
     var content: [KeyboardContent] {
         return [KeyboardContent(id: "1", displayText: "greetings", content: ["hey","what's up?","how's it going?"]),
                 KeyboardContent(id: "2", displayText: "greetings", content: ["hey","what's up?","how's it going?"]),

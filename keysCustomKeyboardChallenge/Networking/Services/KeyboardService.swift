@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum KeyboardContentService {
+enum KeyboardService {
     case getContent
 }
 
-extension KeyboardContentService: EndpointTargetType {
+extension KeyboardService: EndpointTargetType {
     var baseURL: URL {
         return NetworkConstants.URLs.baseURL
     }
