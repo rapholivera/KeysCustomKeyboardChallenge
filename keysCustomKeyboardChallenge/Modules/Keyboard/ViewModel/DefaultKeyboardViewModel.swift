@@ -10,20 +10,36 @@ import UIKit
 class DefaultKeyboardViewModel {
     
     private let repository: KeyboardRepository
+    @Published private var arrKeyboardContent = [KeyboardContent]()
+    @Published private var isKeyboardLoadingContent: Bool = false
     
     init(repository: KeyboardRepository) {
         self.repository = repository
+        self.fetchKeyboardContent()
     }
 }
 
 extension DefaultKeyboardViewModel: KeyboardViewModel {
+    
+    func fetchKeyboardContent() {
+        repository.getContent()
+        .compactMap({ $0 })
+        .replaceError(with: [])
+        .eraseToAnyPublisher()
+        .receive(on: DispatchQueue.main)
+        .handleEvents(receiveSubscription: { _ in
+            self.isKeyboardLoadingContent = true
+        }, receiveCompletion: { _ in
+            self.isKeyboardLoadingContent = false
+        })
+        .assign(to: &$arrKeyboardContent)
+    }
+    
     var content: [KeyboardContent] {
-        return [KeyboardContent(id: "1", displayText: "greetings", content: ["hey","what's up?","how's it going?"]),
-                KeyboardContent(id: "2", displayText: "greetings", content: ["hey","what's up?","how's it going?"]),
-                KeyboardContent(id: "3", displayText: "greetings", content: ["hey","what's up?","how's it going?"])]
+        return arrKeyboardContent
     }
     
     var isLoadingContent: Bool {
-        return false
+        return isKeyboardLoadingContent
     }
 }

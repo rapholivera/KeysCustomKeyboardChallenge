@@ -25,11 +25,12 @@ class NetworkEngineRouter<EndPoint: EndpointTargetType>: NetworkRouter {
             
             return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { element -> Data in
+                
                 guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                     throw URLError(.badServerResponse)
                 }
-                print("URL:\(String(describing: request.url?.path))")
-                print("results:\(try JSONDecoder().decode(T.self, from: element.data))")
+                
+                HTTPLogger.log(request: request, response: httpResponse, data: element.data)
 
                 return element.data
             }
@@ -53,11 +54,6 @@ class NetworkEngineRouter<EndPoint: EndpointTargetType>: NetworkRouter {
 
         request.httpMethod = route.httpMethod.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        switch route.task {
-        case .request:
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        }
         return request
     }
 }

@@ -7,7 +7,14 @@
 
 import UIKit
 
-//{"id":"1","displayText":"greetings","content":["hey","what's up?","how's it going?"]}
+struct KeyboardContentResponse: Decodable, Encodable {
+    let content: [KeyboardContent]
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(content, forKey: .content)
+    }
+}
 
 struct KeyboardContent: Hashable, Decodable, Encodable {
     let id: String

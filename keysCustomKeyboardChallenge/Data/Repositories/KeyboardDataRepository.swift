@@ -8,13 +8,20 @@
 import UIKit
 import Combine
 
-class KeyboardDataRepository: KeyboardRepository {
-    
+class KeyboardDataRepository {
     private var engine: NetworkEngineRouter<KeyboardService> {
         return NetworkEngineRouter<KeyboardService>()
     }
-    
+}
+
+extension KeyboardDataRepository: KeyboardRepository {
     func getContent() -> AnyPublisher<[KeyboardContent], Error> {
+        return getContentKeyboard().map { kContent in
+            return kContent.content
+        }.eraseToAnyPublisher()
+    }
+    
+    private func getContentKeyboard() -> AnyPublisher<KeyboardContentResponse, Error> {
         return engine.request(target: .getContent)
     }
 }
