@@ -14,7 +14,7 @@ struct ErrorView: View {
     var body: some View {
         VStack {
             Text(errorMessage)
-            Button("Retry") {
+            Button(Localized.Default.Retry) {
                 actionBlock?()
             }.buttonStyle(RetryButtonStyle())
         }.padding()
@@ -23,9 +23,7 @@ struct ErrorView: View {
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        let mockErrorMessage: String = "Something went wrong!"
-        ErrorView(errorMessage: mockErrorMessage) {
-            print("retry tapped!")
-        }
+        let mockErrorMessage: String = Localized.Default.GenericErrorMessage
+        ErrorView(errorMessage: mockErrorMessage) { }
     }
 }

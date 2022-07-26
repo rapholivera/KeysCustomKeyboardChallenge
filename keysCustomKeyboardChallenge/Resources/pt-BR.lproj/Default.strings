@@ -1,0 +1,12 @@
+/* 
+  Default.strings
+  keysCustomKeyboardChallenge
+
+  Created by Raphael Oliveira on 26/07/22.
+  
+*/
+
+"searchingKeyboardContent" = "Carregando conteúdo do teclado...";
+"exit" = "Sair";
+"retry" = "Tentar novamente";
+"genericErrorMessage" = "Algo deu errado";

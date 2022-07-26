@@ -19,7 +19,7 @@ struct LoadingView: View {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        let mockLoadingMessage: String = "Fetching keyboard content..."
+        let mockLoadingMessage: String = Localized.Default.SearchingContent
         LoadingView(loadingMessage: mockLoadingMessage)
     }
 }

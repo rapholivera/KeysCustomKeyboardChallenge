@@ -9,5 +9,6 @@ import UIKit
 import Combine
 
 protocol KeyboardRepository {
+    /// Fetch keyboard content from api
     func getContent() -> AnyPublisher<KeyboardContentResponse, Error>
 }
