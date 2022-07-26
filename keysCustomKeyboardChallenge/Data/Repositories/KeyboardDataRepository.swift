@@ -15,10 +15,13 @@ class KeyboardDataRepository {
 }
 
 extension KeyboardDataRepository: KeyboardRepository {
-    func getContent() -> AnyPublisher<[KeyboardContent], Error> {
-        return getContentKeyboard().map { kContent in
-            return kContent.content
-        }.eraseToAnyPublisher()
+    func getContent() -> AnyPublisher<ViewResponse<[KeyboardContent]>, Never> {
+        return getContentKeyboard()
+            .map { .success($0.content) }
+            .catch { error in Just(.failure(error.localizedDescription)) }
+            .receive(on: RunLoop.main)
+            .prepend(.loading)
+            .eraseToAnyPublisher()
     }
     
     private func getContentKeyboard() -> AnyPublisher<KeyboardContentResponse, Error> {

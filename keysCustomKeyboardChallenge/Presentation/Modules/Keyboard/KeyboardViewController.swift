@@ -23,7 +23,8 @@ class KeyboardViewController: UIInputViewController {
          Tip - the built in method `advanceToNextInput` exits our keyboard and takes
          the user to the next
          */
-        setup(with: KeyboardFactory.build())
+        
+        setup(with: KeyboardFactory.build(documentProxy: textDocumentProxy))
     }
     
     override func viewWillLayoutSubviews() {

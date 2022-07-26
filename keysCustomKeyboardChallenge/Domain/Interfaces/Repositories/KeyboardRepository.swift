@@ -9,5 +9,5 @@ import UIKit
 import Combine
 
 protocol KeyboardRepository {
-    func getContent() -> AnyPublisher<[KeyboardContent], Error>
+    func getContent() -> AnyPublisher<ViewResponse<[KeyboardContent]>, Never>
 }

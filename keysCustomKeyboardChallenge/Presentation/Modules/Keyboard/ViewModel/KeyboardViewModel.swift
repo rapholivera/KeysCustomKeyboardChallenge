@@ -9,9 +9,7 @@ import UIKit
 
 protocol KeyboardViewModel: ObservableObject {
     /// properties
-    var content: [KeyboardContent] { get }
-    var isLoadingContent: Bool { get }
-    
+    var keyboardContentViewState: ViewResponse<[KeyboardContent]> { get }
     /// functions
     func fetchKeyboardContent()
 }
