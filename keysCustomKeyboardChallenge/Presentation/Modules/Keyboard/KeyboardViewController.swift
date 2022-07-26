@@ -24,7 +24,7 @@ class KeyboardViewController: UIInputViewController {
          the user to the next
          */
         
-        setup(with: KeyboardFactory.build(documentProxy: textDocumentProxy))
+        setup(with: KeyboardFactory.build(documentProxy: self))
     }
     
     override func viewWillLayoutSubviews() {
@@ -37,6 +37,26 @@ class KeyboardViewController: UIInputViewController {
     
     override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
+    }
+}
+
+extension KeyboardViewController: DocumentProxyCallbackProtocol {
+    /// Inserts a character into the displayed text.
+    func insertText(_ text: String) {
+        clearInputText()
+        textDocumentProxy.insertText(text)
+    }
+    /// Switches to the next keyboard in the list of user-enabled keyboards.
+    func switchToNextInputMode() {
+        advanceToNextInputMode()
+    }
+    /// Responsible to clear all the text that the UITextDocumentProxy object can access in the textfield before the cursor position
+    private func clearInputText() {
+        if let word:String = self.textDocumentProxy.documentContextBeforeInput {
+            for _: Int in 0 ..< word.count {
+                self.textDocumentProxy.deleteBackward()
+            }
+        }
     }
 }
 

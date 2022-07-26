@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 struct KeyboardContentResponse: Decodable, Encodable {
     let content: [KeyboardContent]

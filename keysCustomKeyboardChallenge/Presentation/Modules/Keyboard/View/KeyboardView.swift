@@ -20,7 +20,22 @@ struct KeyboardView<ViewModel>: View where ViewModel: KeyboardViewModel {
             case .loading:
                 LoadingView(loadingMessage: "Fetching keyboard content...")
             case .success(let content):
-                KeyboardContentView(keyboardContent: content)
+                
+                KeyboardContentView(keyboardContent: content) { content in
+                    keyboardViewModel.clickSelectKeyboardContent(content: content)
+                } clickContentFromMenu: { content, contentSelected in
+                    keyboardViewModel.clickSelectKeyboardContentFromMenu(content: content, selectedContent: contentSelected)
+                } clickExitInputMode: {
+                    keyboardViewModel.clickExitInputMode()
+                }
+
+                
+                
+//                KeyboardContentView(keyboardContent: content) { content in
+//                    keyboardViewModel.clickSelectKeyboardContent(content: content)
+//                } clickExitInputMode: {
+//                    keyboardViewModel.clickExitInputMode()
+//                }
             case .failure(let errorMessage):
                 ErrorView(errorMessage: errorMessage) {
                     keyboardViewModel.fetchKeyboardContent()

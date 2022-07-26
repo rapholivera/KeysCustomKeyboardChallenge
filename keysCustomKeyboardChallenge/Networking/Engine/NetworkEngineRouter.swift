@@ -16,7 +16,7 @@ protocol NetworkRouter {
 class NetworkEngineRouter<EndPoint: EndpointTargetType>: NetworkRouter {
     
     func request<T: Codable>(target: EndPoint) -> AnyPublisher<T, Error> {
-
+        
         let urlRequest = self.buildRequest(from: target)
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
@@ -38,11 +38,7 @@ class NetworkEngineRouter<EndPoint: EndpointTargetType>: NetworkRouter {
     }
     
     private func buildRequest(from route: EndPoint) -> URLRequest {
-        
-        var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path),
-                                 cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                                 timeoutInterval: 10.0)
-        
+        var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path), cachePolicy: .returnCacheDataElseLoad)
         request.httpMethod = route.httpMethod.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request

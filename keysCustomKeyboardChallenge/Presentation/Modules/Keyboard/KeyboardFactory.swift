@@ -9,9 +9,9 @@ import UIKit
 
 class KeyboardFactory {
     // MARK: - Life Cycle
-    class func build(documentProxy: UITextDocumentProxy) -> KeyboardView<DefaultKeyboardViewModel> {
-        let repository = KeyboardDataRepository()
-        let viewModel = DefaultKeyboardViewModel(repository: repository, documentProxy: documentProxy)
+    class func build(documentProxy: DocumentProxyCallbackProtocol) -> KeyboardView<DefaultKeyboardViewModel> {
+        let useCase = DefaultGetContentUseCase(repository: KeyboardDataRepository())
+        let viewModel = DefaultKeyboardViewModel(useCase: useCase, documentProxyCallback: documentProxy)
         return KeyboardView(keyboardViewModel: viewModel)
     }
 }

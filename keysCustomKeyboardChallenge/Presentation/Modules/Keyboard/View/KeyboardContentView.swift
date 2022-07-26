@@ -8,21 +8,36 @@
 import SwiftUI
 
 struct KeyboardContentView: View {
+    
     let keyboardContent: [KeyboardContent]
+    var clickContent: ((_ content: KeyboardContent) -> ())?
+    var clickContentFromMenu: ((_ content: KeyboardContent, _ contentSelected: String) -> ())?
+    let clickExitInputMode: (() -> Void)?
+    
     var body: some View {
-
-        VStack {            
+        
+        VStack {
             HStack {
-                ForEach(keyboardContent, id: \.self) {
-                    Button($0.displayText.capitalized) {
-                        print("selected content")
+                ForEach(keyboardContent, id: \.self) { content in
+                    
+                    Button(content.displayText.capitalized) {
+                        clickContent?(content)
                     }.buttonStyle(DefaultButtonStyle())
+                        .contextMenu {
+                            ForEach(content.content, id: \.self) { contentText in
+                                Button {
+                                    clickContentFromMenu?(content, contentText)
+                                } label: {
+                                    Label(contentText.capitalized, systemImage: "message")
+                                }
+                            }
+                        }
                 }
             }.padding(.vertical, 40)
             
             HStack {
                 Button("Sair") {
-                    print("selected content")
+                    clickExitInputMode?()
                 }.buttonStyle(DefaultButtonStyle())
                 Spacer()
             }
@@ -32,6 +47,6 @@ struct KeyboardContentView: View {
 
 struct KeyboardContentView_Previews: PreviewProvider {
     static var previews: some View {
-        KeyboardContentView(keyboardContent: [])
+        KeyboardContentView(keyboardContent: [], clickExitInputMode: nil)
     }
 }

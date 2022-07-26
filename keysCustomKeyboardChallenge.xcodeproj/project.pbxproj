@@ -14,6 +14,7 @@
 		6438976E288F90CB0040B5CB /* RetryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438976D288F90CB0040B5CB /* RetryButtonStyle.swift */; };
 		64389770288F938C0040B5CB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438976F288F938C0040B5CB /* WelcomeView.swift */; };
 		64389772288F9DF40040B5CB /* KeyboardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389771288F9DF40040B5CB /* KeyboardContentView.swift */; };
+		64389775288FA9BD0040B5CB /* GetContentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389774288FA9BD0040B5CB /* GetContentUseCase.swift */; };
 		6469ECC8288F40E400AD6838 /* DefaultKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECC6288F3FB600AD6838 /* DefaultKeyboardViewModel.swift */; };
 		6469ECC9288F40E600AD6838 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECC4288F3E6900AD6838 /* KeyboardViewModel.swift */; };
 		6469ECCC288F413E00AD6838 /* KeyboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECCA288F411E00AD6838 /* KeyboardFactory.swift */; };
@@ -72,6 +73,7 @@
 		6438976D288F90CB0040B5CB /* RetryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryButtonStyle.swift; sourceTree = "<group>"; };
 		6438976F288F938C0040B5CB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		64389771288F9DF40040B5CB /* KeyboardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardContentView.swift; sourceTree = "<group>"; };
+		64389774288FA9BD0040B5CB /* GetContentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContentUseCase.swift; sourceTree = "<group>"; };
 		6469ECC4288F3E6900AD6838 /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
 		6469ECC6288F3FB600AD6838 /* DefaultKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeyboardViewModel.swift; sourceTree = "<group>"; };
 		6469ECCA288F411E00AD6838 /* KeyboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFactory.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		64389773288FA96A0040B5CB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				64389774288FA9BD0040B5CB /* GetContentUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		6469ECC3288F3E5400AD6838 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,9 +185,10 @@
 		6469ECD2288F471700AD6838 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				6438975D288F6F800040B5CB /* Utils */,
 				6469ECD8288F4CE100AD6838 /* Interfaces */,
 				6469ECD3288F471E00AD6838 /* Entities */,
+				64389773288FA96A0040B5CB /* UseCases */,
+				6438975D288F6F800040B5CB /* Utils */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -351,12 +362,12 @@
 		A3445BC828299E0200F25EBC /* keysCustomKeyboardChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				64A1B64D288CE5FE00EF2F12 /* Application */,
 				6469ECE9288F5E9200AD6838 /* Common */,
 				6469ECDD288F4DDA00AD6838 /* Data */,
 				6469ECD2288F471700AD6838 /* Domain */,
-				64A1B64D288CE5FE00EF2F12 /* Application */,
-				64389760288F871C0040B5CB /* Presentation */,
 				64A1B64F288CE68200EF2F12 /* Networking */,
+				64389760288F871C0040B5CB /* Presentation */,
 				64A1B667288D107F00EF2F12 /* Resources */,
 				A3445BCB28299E0200F25EBC /* ContentView.swift */,
 			);
@@ -497,6 +508,7 @@
 				6469ECC8288F40E400AD6838 /* DefaultKeyboardViewModel.swift in Sources */,
 				6438976C288F8CE50040B5CB /* DefaultButtonStyle.swift in Sources */,
 				6469ECE2288F4F0700AD6838 /* NetworkEngineRouter.swift in Sources */,
+				64389775288FA9BD0040B5CB /* GetContentUseCase.swift in Sources */,
 				64389765288F88A00040B5CB /* LoadingView.swift in Sources */,
 				6469ECDC288F4DAC00AD6838 /* KeyboardRepository.swift in Sources */,
 				A3445BDE282B06EE00F25EBC /* KeyboardViewController.swift in Sources */,
