@@ -14,11 +14,15 @@ struct KeyboardView<ViewModel>: View where ViewModel: KeyboardViewModel {
     /// An advantage of `protocols` in Swift is that objects can conform to multiple protocols. When writing an app this way, your code becomes more `modular`. Think of protocols as building blocks of functionality. When you add new functionality by conforming an object to a protocol, you don’t build a whole new object. `That’s time-consuming`. Instead, you add different building blocks until your object is ready.
     @ObservedObject var keyboardViewModel: ViewModel
     
+    @State var contentViewState: ViewResponse<[KeyboardContent]> = .loading
+    
+    internal let inspection = Inspection<Self>()
+    
     var body: some View {
         
         VStack {
             /// The `keyboardContentViewState` are responsible to make transitions between different states (loading, error, rendering the content)
-            switch keyboardViewModel.keyboardContentViewState {
+            switch self.contentViewState {
             case .new, .loading:
                 /// If our project have an initial state before fetch content, we can handle it on `.new` state
                 LoadingView(loadingMessage: Localized.Default.SearchingContent)
@@ -39,10 +43,15 @@ struct KeyboardView<ViewModel>: View where ViewModel: KeyboardViewModel {
                     keyboardViewModel.fetchKeyboardContent()
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             /// fetch keyboard content only on `viewDidAppear` to avoid uncessesary requestes before render views
             keyboardViewModel.fetchKeyboardContent()
-        }.frame(minHeight: 225)
+        }
+        .frame(minHeight: 225)
+        .onReceive(keyboardViewModel.keyboardContentViewState) { self.contentViewState = $0 }
+        .onReceive(inspection.notice) { self.inspection.visit(self, $0) }
+        
     }
 }
 

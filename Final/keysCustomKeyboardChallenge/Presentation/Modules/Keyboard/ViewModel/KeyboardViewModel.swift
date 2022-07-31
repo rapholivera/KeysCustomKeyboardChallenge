@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 protocol KeyboardViewModel: ObservableObject {
     /// through`keyboardContentViewState` we can handle keyboard view states, in case of sucess response we can use `KeyboardContent` and build content buttons
-    var keyboardContentViewState: ViewResponse<[KeyboardContent]> { get }
+    var keyboardContentViewState: AnyPublisher<ViewResponse<[KeyboardContent]>, Never> { get }
     /// `fetchKeyboardContent` are responsible to make a request keyboard content directly, from user inteaction or view lifecycle
     func fetchKeyboardContent()
     /// `clickSelectKeyboardContent` are responsible to handle user interaction on keyboard content button

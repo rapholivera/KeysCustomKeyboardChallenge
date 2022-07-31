@@ -10,5 +10,5 @@ import Combine
 
 protocol KeyboardRepository {
     /// Fetch keyboard content from api
-    func getContent() -> AnyPublisher<KeyboardContentResponse, Error>
+    func getContent() -> AnyPublisher<KeyboardContentResponse, HTTPError>
 }

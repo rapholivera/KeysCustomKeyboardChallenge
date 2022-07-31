@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6428A1892895F5AC006BF735 /* Localized+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6428A1882895F5AC006BF735 /* Localized+Error.swift */; };
+		6428A18A2895F5AC006BF735 /* Localized+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6428A1882895F5AC006BF735 /* Localized+Error.swift */; };
+		6428A18E2895F63B006BF735 /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6428A1912895F63B006BF735 /* Error.strings */; };
+		6428A18F2895F63B006BF735 /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6428A1912895F63B006BF735 /* Error.strings */; };
 		6438975F288F6F8F0040B5CB /* ViewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438975E288F6F8F0040B5CB /* ViewResponse.swift */; };
 		64389763288F874C0040B5CB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389762288F874C0040B5CB /* ErrorView.swift */; };
 		64389765288F88A00040B5CB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389764288F88A00040B5CB /* LoadingView.swift */; };
@@ -17,7 +21,6 @@
 		6469ECC8288F40E400AD6838 /* DefaultKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECC6288F3FB600AD6838 /* DefaultKeyboardViewModel.swift */; };
 		6469ECC9288F40E600AD6838 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECC4288F3E6900AD6838 /* KeyboardViewModel.swift */; };
 		6469ECCC288F413E00AD6838 /* KeyboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECCA288F411E00AD6838 /* KeyboardFactory.swift */; };
-		6469ECD7288F47E300AD6838 /* KeyboardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECD5288F476B00AD6838 /* KeyboardContent.swift */; };
 		6469ECDC288F4DAC00AD6838 /* KeyboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECDA288F4CFD00AD6838 /* KeyboardRepository.swift */; };
 		6469ECE1288F4EDE00AD6838 /* KeyboardDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECDF288F4DFD00AD6838 /* KeyboardDataRepository.swift */; };
 		6469ECE2288F4F0700AD6838 /* NetworkEngineRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B662288D0E8D00EF2F12 /* NetworkEngineRouter.swift */; };
@@ -28,10 +31,41 @@
 		6469ECE7288F4F3200AD6838 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B665288D0F6100EF2F12 /* KeyboardService.swift */; };
 		6469ECE8288F4F4B00AD6838 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B651288CE70B00EF2F12 /* NetworkConstants.swift */; };
 		6469ECEB288F5EA900AD6838 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECEA288F5EA900AD6838 /* HTTPError.swift */; };
-		64A1B65A288CFDBB00EF2F12 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B659288CFDBB00EF2F12 /* URLParameterEncoder.swift */; };
-		64A1B65C288CFDE200EF2F12 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B65B288CFDE200EF2F12 /* ParameterEncoding.swift */; };
+		6479740A289382B400E20F52 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797409289382B400E20F52 /* BaseView.swift */; };
+		6479740B289382B400E20F52 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797409289382B400E20F52 /* BaseView.swift */; };
+		6479740D28939DE700E20F52 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6479740C28939DE700E20F52 /* Inspection.swift */; };
+		6479741028939E4D00E20F52 /* Inspectable+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6479740F28939E4D00E20F52 /* Inspectable+Model.swift */; };
+		64CD9A0E2894F44F003D3C13 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 64CD9A0D2894F44F003D3C13 /* ViewInspector */; };
+		64CD9A0F2894F8D9003D3C13 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6479740C28939DE700E20F52 /* Inspection.swift */; };
+		64CD9A222895036F003D3C13 /* NSArray+Compare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CD9A212895036F003D3C13 /* NSArray+Compare.swift */; };
 		64D05F0528907B4000A8DC01 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D05F0428907B4000A8DC01 /* Localized.swift */; };
 		64D05F0828907B8800A8DC01 /* Default.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64D05F0A28907B8800A8DC01 /* Default.strings */; };
+		64DA134F289209F500BC2867 /* keysCustomKeyboardChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA134E289209F500BC2867 /* keysCustomKeyboardChallengeTests.swift */; };
+		64DA135A28920EC000BC2867 /* KeyboardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECD5288F476B00AD6838 /* KeyboardContent.swift */; };
+		64F835A428921C2300F38A74 /* KeyboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECCA288F411E00AD6838 /* KeyboardFactory.swift */; };
+		64F835A528921C2F00F38A74 /* DefaultKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECC6288F3FB600AD6838 /* DefaultKeyboardViewModel.swift */; };
+		64F835A628921C3400F38A74 /* GetContentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389774288FA9BD0040B5CB /* GetContentUseCase.swift */; };
+		64F835A728921C3A00F38A74 /* ViewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438975E288F6F8F0040B5CB /* ViewResponse.swift */; };
+		64F835A828921C4000F38A74 /* KeyboardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECD5288F476B00AD6838 /* KeyboardContent.swift */; };
+		64F835A928921C4A00F38A74 /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECC4288F3E6900AD6838 /* KeyboardViewModel.swift */; };
+		64F835AA28921C5100F38A74 /* KeyboardDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECDF288F4DFD00AD6838 /* KeyboardDataRepository.swift */; };
+		64F835AB28921C5700F38A74 /* NetworkEngineRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B662288D0E8D00EF2F12 /* NetworkEngineRouter.swift */; };
+		64F835AC28921C5D00F38A74 /* EndpointTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B65F288D026B00EF2F12 /* EndpointTargetType.swift */; };
+		64F835AD28921C6400F38A74 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3445BE7282B114400F25EBC /* KeyboardView.swift */; };
+		64F835AE28921C6B00F38A74 /* KeyboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECDA288F4CFD00AD6838 /* KeyboardRepository.swift */; };
+		64F835AF28921C7200F38A74 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B665288D0F6100EF2F12 /* KeyboardService.swift */; };
+		64F835B028921C7900F38A74 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B651288CE70B00EF2F12 /* NetworkConstants.swift */; };
+		64F835B128921CA500F38A74 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B654288CED4F00EF2F12 /* HTTPTask.swift */; };
+		64F835B228921CA700F38A74 /* HTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B656288CF94200EF2F12 /* HTTPLogger.swift */; };
+		64F835B328921CAA00F38A74 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B65D288D020C00EF2F12 /* HTTPMethod.swift */; };
+		64F835B428921CC200F38A74 /* KeyboardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389771288F9DF40040B5CB /* KeyboardContentView.swift */; };
+		64F835B528921CC800F38A74 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3445BDD282B06EE00F25EBC /* KeyboardViewController.swift */; };
+		64F835B628921CD200F38A74 /* DefaultButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438976B288F8CE50040B5CB /* DefaultButtonStyle.swift */; };
+		64F835B728921CD200F38A74 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389762288F874C0040B5CB /* ErrorView.swift */; };
+		64F835B828921CD200F38A74 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64389764288F88A00040B5CB /* LoadingView.swift */; };
+		64F835B928921CD200F38A74 /* RetryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6438976D288F90CB0040B5CB /* RetryButtonStyle.swift */; };
+		64F835BA28921CE000F38A74 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D05F0428907B4000A8DC01 /* Localized.swift */; };
+		64F835BB28921CE900F38A74 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECEA288F5EA900AD6838 /* HTTPError.swift */; };
 		A3445BCA28299E0200F25EBC /* keysCustomKeyboardChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3445BC928299E0200F25EBC /* keysCustomKeyboardChallengeApp.swift */; };
 		A3445BCC28299E0200F25EBC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3445BCB28299E0200F25EBC /* ContentView.swift */; };
 		A3445BCE28299E0500F25EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3445BCD28299E0500F25EBC /* Assets.xcassets */; };
@@ -42,6 +76,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		64DA1350289209F500BC2867 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3445BBE28299E0200F25EBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3445BC528299E0200F25EBC;
+			remoteInfo = keysCustomKeyboardChallenge;
+		};
 		A3445BE0282B06EE00F25EBC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A3445BBE28299E0200F25EBC /* Project object */;
@@ -66,6 +107,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6428A1882895F5AC006BF735 /* Localized+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localized+Error.swift"; sourceTree = "<group>"; };
+		6428A1902895F63B006BF735 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Error.strings; sourceTree = "<group>"; };
+		6428A1922895F63D006BF735 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Error.strings"; sourceTree = "<group>"; };
 		6438975E288F6F8F0040B5CB /* ViewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewResponse.swift; sourceTree = "<group>"; };
 		64389762288F874C0040B5CB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		64389764288F88A00040B5CB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -80,18 +124,22 @@
 		6469ECDA288F4CFD00AD6838 /* KeyboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRepository.swift; sourceTree = "<group>"; };
 		6469ECDF288F4DFD00AD6838 /* KeyboardDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDataRepository.swift; sourceTree = "<group>"; };
 		6469ECEA288F5EA900AD6838 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		64797409289382B400E20F52 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		6479740C28939DE700E20F52 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
+		6479740F28939E4D00E20F52 /* Inspectable+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inspectable+Model.swift"; sourceTree = "<group>"; };
 		64A1B651288CE70B00EF2F12 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		64A1B654288CED4F00EF2F12 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		64A1B656288CF94200EF2F12 /* HTTPLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPLogger.swift; sourceTree = "<group>"; };
-		64A1B659288CFDBB00EF2F12 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
-		64A1B65B288CFDE200EF2F12 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		64A1B65D288D020C00EF2F12 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		64A1B65F288D026B00EF2F12 /* EndpointTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTargetType.swift; sourceTree = "<group>"; };
 		64A1B662288D0E8D00EF2F12 /* NetworkEngineRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngineRouter.swift; sourceTree = "<group>"; };
 		64A1B665288D0F6100EF2F12 /* KeyboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
+		64CD9A212895036F003D3C13 /* NSArray+Compare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSArray+Compare.swift"; sourceTree = "<group>"; };
 		64D05F0428907B4000A8DC01 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		64D05F0928907B8800A8DC01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Default.strings; sourceTree = "<group>"; };
 		64D05F0B28907BB200A8DC01 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Default.strings"; sourceTree = "<group>"; };
+		64DA134C289209F500BC2867 /* keysCustomKeyboardChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keysCustomKeyboardChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DA134E289209F500BC2867 /* keysCustomKeyboardChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keysCustomKeyboardChallengeTests.swift; sourceTree = "<group>"; };
 		A3445BC628299E0200F25EBC /* keysCustomKeyboardChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keysCustomKeyboardChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3445BC928299E0200F25EBC /* keysCustomKeyboardChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keysCustomKeyboardChallengeApp.swift; sourceTree = "<group>"; };
 		A3445BCB28299E0200F25EBC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +152,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		64DA1349289209F500BC2867 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64CD9A0E2894F44F003D3C13 /* ViewInspector in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3445BC328299E0200F25EBC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,6 +188,7 @@
 		64389760288F871C0040B5CB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				647974082893829D00E20F52 /* Base */,
 				64A1B64E288CE63900EF2F12 /* Modules */,
 				64389761288F87240040B5CB /* Utils */,
 			);
@@ -144,6 +201,7 @@
 				6438976A288F8CC20040B5CB /* Style */,
 				64389762288F874C0040B5CB /* ErrorView.swift */,
 				64389764288F88A00040B5CB /* LoadingView.swift */,
+				6479740C28939DE700E20F52 /* Inspection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -245,9 +303,18 @@
 		6469ECE9288F5E9200AD6838 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				64CD9A2028950350003D3C13 /* Extensions */,
 				6469ECEA288F5EA900AD6838 /* HTTPError.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		647974082893829D00E20F52 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				64797409289382B400E20F52 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		64A1B64D288CE5FE00EF2F12 /* Application */ = {
@@ -289,22 +356,12 @@
 		64A1B653288CED2800EF2F12 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
-				64A1B658288CFDA400EF2F12 /* Encoding */,
 				64A1B654288CED4F00EF2F12 /* HTTPTask.swift */,
 				64A1B656288CF94200EF2F12 /* HTTPLogger.swift */,
 				64A1B65D288D020C00EF2F12 /* HTTPMethod.swift */,
 				64A1B65F288D026B00EF2F12 /* EndpointTargetType.swift */,
 			);
 			path = Layer;
-			sourceTree = "<group>";
-		};
-		64A1B658288CFDA400EF2F12 /* Encoding */ = {
-			isa = PBXGroup;
-			children = (
-				64A1B659288CFDBB00EF2F12 /* URLParameterEncoder.swift */,
-				64A1B65B288CFDE200EF2F12 /* ParameterEncoding.swift */,
-			);
-			path = Encoding;
 			sourceTree = "<group>";
 		};
 		64A1B661288D0E7F00EF2F12 /* Engine */ = {
@@ -330,7 +387,9 @@
 				A3445BCD28299E0500F25EBC /* Assets.xcassets */,
 				A3445BCF28299E0500F25EBC /* Preview Content */,
 				64D05F0428907B4000A8DC01 /* Localized.swift */,
+				6428A1882895F5AC006BF735 /* Localized+Error.swift */,
 				64D05F0A28907B8800A8DC01 /* Default.strings */,
+				6428A1912895F63B006BF735 /* Error.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -346,10 +405,28 @@
 			path = Keyboard;
 			sourceTree = "<group>";
 		};
+		64CD9A2028950350003D3C13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				64CD9A212895036F003D3C13 /* NSArray+Compare.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		64DA134D289209F500BC2867 /* keysCustomKeyboardChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				64DA134E289209F500BC2867 /* keysCustomKeyboardChallengeTests.swift */,
+				6479740F28939E4D00E20F52 /* Inspectable+Model.swift */,
+			);
+			path = keysCustomKeyboardChallengeTests;
+			sourceTree = "<group>";
+		};
 		A3445BBD28299E0200F25EBC = {
 			isa = PBXGroup;
 			children = (
 				A3445BC828299E0200F25EBC /* keysCustomKeyboardChallenge */,
+				64DA134D289209F500BC2867 /* keysCustomKeyboardChallengeTests */,
 				A3445BC728299E0200F25EBC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -359,6 +436,7 @@
 			children = (
 				A3445BC628299E0200F25EBC /* keysCustomKeyboardChallenge.app */,
 				A3445BDB282B06EE00F25EBC /* keyboard.appex */,
+				64DA134C289209F500BC2867 /* keysCustomKeyboardChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,6 +466,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		64DA134B289209F500BC2867 /* keysCustomKeyboardChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64DA1354289209F500BC2867 /* Build configuration list for PBXNativeTarget "keysCustomKeyboardChallengeTests" */;
+			buildPhases = (
+				64DA1348289209F500BC2867 /* Sources */,
+				64DA1349289209F500BC2867 /* Frameworks */,
+				64DA134A289209F500BC2867 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64DA1351289209F500BC2867 /* PBXTargetDependency */,
+			);
+			name = keysCustomKeyboardChallengeTests;
+			packageProductDependencies = (
+				64CD9A0D2894F44F003D3C13 /* ViewInspector */,
+			);
+			productName = keysCustomKeyboardChallengeTests;
+			productReference = 64DA134C289209F500BC2867 /* keysCustomKeyboardChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A3445BC528299E0200F25EBC /* keysCustomKeyboardChallenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3445BD428299E0500F25EBC /* Build configuration list for PBXNativeTarget "keysCustomKeyboardChallenge" */;
@@ -434,6 +533,10 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					64DA134B289209F500BC2867 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = A3445BC528299E0200F25EBC;
+					};
 					A3445BC528299E0200F25EBC = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -452,21 +555,33 @@
 				"pt-BR",
 			);
 			mainGroup = A3445BBD28299E0200F25EBC;
+			packageReferences = (
+				64CD9A0C2894F44F003D3C13 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = A3445BC728299E0200F25EBC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A3445BC528299E0200F25EBC /* keysCustomKeyboardChallenge */,
 				A3445BDA282B06EE00F25EBC /* keyboard */,
+				64DA134B289209F500BC2867 /* keysCustomKeyboardChallengeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		64DA134A289209F500BC2867 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3445BC428299E0200F25EBC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6428A18E2895F63B006BF735 /* Error.strings in Resources */,
 				A3445BD128299E0500F25EBC /* Preview Assets.xcassets in Resources */,
 				A3445BCE28299E0500F25EBC /* Assets.xcassets in Resources */,
 			);
@@ -477,20 +592,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				64D05F0828907B8800A8DC01 /* Default.strings in Resources */,
+				6428A18F2895F63B006BF735 /* Error.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		64DA1348289209F500BC2867 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6479741028939E4D00E20F52 /* Inspectable+Model.swift in Sources */,
+				64DA134F289209F500BC2867 /* keysCustomKeyboardChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3445BC228299E0200F25EBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A1B65C288CFDE200EF2F12 /* ParameterEncoding.swift in Sources */,
-				64A1B65A288CFDBB00EF2F12 /* URLParameterEncoder.swift in Sources */,
+				64F835AE28921C6B00F38A74 /* KeyboardRepository.swift in Sources */,
+				64F835AF28921C7200F38A74 /* KeyboardService.swift in Sources */,
+				64F835B428921CC200F38A74 /* KeyboardContentView.swift in Sources */,
+				6479740D28939DE700E20F52 /* Inspection.swift in Sources */,
+				64F835A928921C4A00F38A74 /* KeyboardViewModel.swift in Sources */,
+				64F835B928921CD200F38A74 /* RetryButtonStyle.swift in Sources */,
+				64F835A528921C2F00F38A74 /* DefaultKeyboardViewModel.swift in Sources */,
+				6479740A289382B400E20F52 /* BaseView.swift in Sources */,
+				64F835BB28921CE900F38A74 /* HTTPError.swift in Sources */,
+				64F835A428921C2300F38A74 /* KeyboardFactory.swift in Sources */,
+				64F835AB28921C5700F38A74 /* NetworkEngineRouter.swift in Sources */,
 				A3445BCC28299E0200F25EBC /* ContentView.swift in Sources */,
+				64CD9A222895036F003D3C13 /* NSArray+Compare.swift in Sources */,
 				A3445BCA28299E0200F25EBC /* keysCustomKeyboardChallengeApp.swift in Sources */,
+				64F835B228921CA700F38A74 /* HTTPLogger.swift in Sources */,
+				64F835AC28921C5D00F38A74 /* EndpointTargetType.swift in Sources */,
+				64F835B528921CC800F38A74 /* KeyboardViewController.swift in Sources */,
+				64F835AD28921C6400F38A74 /* KeyboardView.swift in Sources */,
+				64F835AA28921C5100F38A74 /* KeyboardDataRepository.swift in Sources */,
+				64F835A828921C4000F38A74 /* KeyboardContent.swift in Sources */,
+				6428A1892895F5AC006BF735 /* Localized+Error.swift in Sources */,
+				64F835B128921CA500F38A74 /* HTTPTask.swift in Sources */,
+				64F835B328921CAA00F38A74 /* HTTPMethod.swift in Sources */,
+				64F835A628921C3400F38A74 /* GetContentUseCase.swift in Sources */,
+				64F835B028921C7900F38A74 /* NetworkConstants.swift in Sources */,
+				64F835BA28921CE000F38A74 /* Localized.swift in Sources */,
+				64F835B628921CD200F38A74 /* DefaultButtonStyle.swift in Sources */,
+				64F835A728921C3A00F38A74 /* ViewResponse.swift in Sources */,
+				64F835B728921CD200F38A74 /* ErrorView.swift in Sources */,
+				64F835B828921CD200F38A74 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,22 +651,25 @@
 			files = (
 				6438975F288F6F8F0040B5CB /* ViewResponse.swift in Sources */,
 				6469ECE4288F4F1F00AD6838 /* HTTPTask.swift in Sources */,
+				6428A18A2895F5AC006BF735 /* Localized+Error.swift in Sources */,
 				64389763288F874C0040B5CB /* ErrorView.swift in Sources */,
 				6469ECE1288F4EDE00AD6838 /* KeyboardDataRepository.swift in Sources */,
 				6469ECE6288F4F2600AD6838 /* HTTPMethod.swift in Sources */,
 				A3445BE8282B114400F25EBC /* KeyboardView.swift in Sources */,
 				6469ECCC288F413E00AD6838 /* KeyboardFactory.swift in Sources */,
-				6469ECD7288F47E300AD6838 /* KeyboardContent.swift in Sources */,
 				6469ECE7288F4F3200AD6838 /* KeyboardService.swift in Sources */,
 				6469ECE3288F4F0F00AD6838 /* EndpointTargetType.swift in Sources */,
 				6469ECE8288F4F4B00AD6838 /* NetworkConstants.swift in Sources */,
 				6469ECC8288F40E400AD6838 /* DefaultKeyboardViewModel.swift in Sources */,
 				6438976C288F8CE50040B5CB /* DefaultButtonStyle.swift in Sources */,
+				6479740B289382B400E20F52 /* BaseView.swift in Sources */,
+				64DA135A28920EC000BC2867 /* KeyboardContent.swift in Sources */,
 				6469ECE2288F4F0700AD6838 /* NetworkEngineRouter.swift in Sources */,
 				64389775288FA9BD0040B5CB /* GetContentUseCase.swift in Sources */,
 				64389765288F88A00040B5CB /* LoadingView.swift in Sources */,
 				6469ECDC288F4DAC00AD6838 /* KeyboardRepository.swift in Sources */,
 				A3445BDE282B06EE00F25EBC /* KeyboardViewController.swift in Sources */,
+				64CD9A0F2894F8D9003D3C13 /* Inspection.swift in Sources */,
 				6438976E288F90CB0040B5CB /* RetryButtonStyle.swift in Sources */,
 				64D05F0528907B4000A8DC01 /* Localized.swift in Sources */,
 				64389772288F9DF40040B5CB /* KeyboardContentView.swift in Sources */,
@@ -528,6 +682,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		64DA1351289209F500BC2867 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3445BC528299E0200F25EBC /* keysCustomKeyboardChallenge */;
+			targetProxy = 64DA1350289209F500BC2867 /* PBXContainerItemProxy */;
+		};
 		A3445BE1282B06EE00F25EBC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A3445BDA282B06EE00F25EBC /* keyboard */;
@@ -536,6 +695,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6428A1912895F63B006BF735 /* Error.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6428A1902895F63B006BF735 /* en */,
+				6428A1922895F63D006BF735 /* pt-BR */,
+			);
+			name = Error.strings;
+			sourceTree = "<group>";
+		};
 		64D05F0A28907B8800A8DC01 /* Default.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -548,6 +716,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		64DA1352289209F500BC2867 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rapholivera.keysCustomKeyboardChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keysCustomKeyboardChallenge.app/keysCustomKeyboardChallenge";
+			};
+			name = Debug;
+		};
+		64DA1353289209F500BC2867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rapholivera.keysCustomKeyboardChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keysCustomKeyboardChallenge.app/keysCustomKeyboardChallenge";
+			};
+			name = Release;
+		};
 		A3445BD228299E0500F25EBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -777,6 +981,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		64DA1354289209F500BC2867 /* Build configuration list for PBXNativeTarget "keysCustomKeyboardChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64DA1352289209F500BC2867 /* Debug */,
+				64DA1353289209F500BC2867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A3445BC128299E0200F25EBC /* Build configuration list for PBXProject "keysCustomKeyboardChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -805,6 +1018,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		64CD9A0C2894F44F003D3C13 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		64CD9A0D2894F44F003D3C13 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64CD9A0C2894F44F003D3C13 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3445BBE28299E0200F25EBC /* Project object */;
 }
