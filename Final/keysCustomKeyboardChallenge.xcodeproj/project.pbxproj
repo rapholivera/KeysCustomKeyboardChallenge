@@ -31,8 +31,6 @@
 		6469ECE7288F4F3200AD6838 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B665288D0F6100EF2F12 /* KeyboardService.swift */; };
 		6469ECE8288F4F4B00AD6838 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1B651288CE70B00EF2F12 /* NetworkConstants.swift */; };
 		6469ECEB288F5EA900AD6838 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469ECEA288F5EA900AD6838 /* HTTPError.swift */; };
-		6479740A289382B400E20F52 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797409289382B400E20F52 /* BaseView.swift */; };
-		6479740B289382B400E20F52 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64797409289382B400E20F52 /* BaseView.swift */; };
 		6479740D28939DE700E20F52 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6479740C28939DE700E20F52 /* Inspection.swift */; };
 		6479741028939E4D00E20F52 /* Inspectable+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6479740F28939E4D00E20F52 /* Inspectable+Model.swift */; };
 		64CD9A0E2894F44F003D3C13 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 64CD9A0D2894F44F003D3C13 /* ViewInspector */; };
@@ -124,7 +122,6 @@
 		6469ECDA288F4CFD00AD6838 /* KeyboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRepository.swift; sourceTree = "<group>"; };
 		6469ECDF288F4DFD00AD6838 /* KeyboardDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDataRepository.swift; sourceTree = "<group>"; };
 		6469ECEA288F5EA900AD6838 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
-		64797409289382B400E20F52 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		6479740C28939DE700E20F52 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
 		6479740F28939E4D00E20F52 /* Inspectable+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inspectable+Model.swift"; sourceTree = "<group>"; };
 		64A1B651288CE70B00EF2F12 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
@@ -188,7 +185,6 @@
 		64389760288F871C0040B5CB /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				647974082893829D00E20F52 /* Base */,
 				64A1B64E288CE63900EF2F12 /* Modules */,
 				64389761288F87240040B5CB /* Utils */,
 			);
@@ -307,14 +303,6 @@
 				6469ECEA288F5EA900AD6838 /* HTTPError.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		647974082893829D00E20F52 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				64797409289382B400E20F52 /* BaseView.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		64A1B64D288CE5FE00EF2F12 /* Application */ = {
@@ -619,7 +607,6 @@
 				64F835A928921C4A00F38A74 /* KeyboardViewModel.swift in Sources */,
 				64F835B928921CD200F38A74 /* RetryButtonStyle.swift in Sources */,
 				64F835A528921C2F00F38A74 /* DefaultKeyboardViewModel.swift in Sources */,
-				6479740A289382B400E20F52 /* BaseView.swift in Sources */,
 				64F835BB28921CE900F38A74 /* HTTPError.swift in Sources */,
 				64F835A428921C2300F38A74 /* KeyboardFactory.swift in Sources */,
 				64F835AB28921C5700F38A74 /* NetworkEngineRouter.swift in Sources */,
@@ -662,7 +649,6 @@
 				6469ECE8288F4F4B00AD6838 /* NetworkConstants.swift in Sources */,
 				6469ECC8288F40E400AD6838 /* DefaultKeyboardViewModel.swift in Sources */,
 				6438976C288F8CE50040B5CB /* DefaultButtonStyle.swift in Sources */,
-				6479740B289382B400E20F52 /* BaseView.swift in Sources */,
 				64DA135A28920EC000BC2867 /* KeyboardContent.swift in Sources */,
 				6469ECE2288F4F0700AD6838 /* NetworkEngineRouter.swift in Sources */,
 				64389775288FA9BD0040B5CB /* GetContentUseCase.swift in Sources */,
