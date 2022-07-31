@@ -6,28 +6,20 @@
 //
 
 import XCTest
-//import SwiftUI
 import Combine
 import ViewInspector
 
 @testable import keysCustomKeyboardChallenge
+import SwiftUI
 
-//extension Inspection: InspectionEmissary { }
-//extension LoadingView: Inspectable{ }
-//extension LoadingView: Inspectable { }
-//extension KeyboardContentView: Inspectable { }
-//extension ErrorView: Inspectable { }
-//extension BaseView: Inspectable {}
-
-class keysCustomKeyboardChallengeTests: XCTestCase {
+class KeysChallengeRequirementsTests: XCTestCase {
     
     /**
-     `BR (Business Requirement)` represents our challenge requrements, so we will use `BDD` approach
-     to make tests be more descriptive, cause BDD can provide more context behind the feature
-     so each test will be responsible to have more clearly what business value we are testing
+     `CR (Challenge Requirement)` represents our business requrements, so we will use `BDD (Behaviour Driven Development)` approach
+     to make tests be more descriptive, cause BDD can provide more context behind the feature so each test will be responsible to have more clearly what business value we are testing
      */
     
-    ///`BR 01.` Remember to display a loading state while the content is being fetched.
+    ///`CR 01.` Remember to display a loading state while the content is being fetched.
     func test_ShowLoadingStateWhileContentIsBeingFetched() throws {
         
         let sut = createKeyboardContentMock()
@@ -41,7 +33,7 @@ class keysCustomKeyboardChallengeTests: XCTestCase {
         XCTAssertEqual(Localized.Default.SearchingContent, inspectedName)
     }
     
-    /// `BR 02.` The API will randomly (about 1/5 times) return an error with status code 500 and json data { error: 'Random Error' }. Make sure you handle this.
+    /// `CR 02.` The API will randomly (about 1/5 times) return an error with status code 500 and json data { error: 'Random Error' }. Make sure you handle this.
     func test_ShowErrorViewWhenApiReturnAnError() throws {
         
         let sut = createKeyboardRandomErrorMock()
@@ -50,12 +42,15 @@ class keysCustomKeyboardChallengeTests: XCTestCase {
             XCTAssertEqual(try view.actualView().contentViewState, .failure(HTTPError.randomError.errorMessage))
             XCTAssertNotNil(try view.actualView().inspect().find(ErrorView.self))
         }
+        
         ViewHosting.host(view: sut)
         wait(for: [exp], timeout: 0.1)
     }
     
-    /// `BR 03.` When you tap the first time, the app should output the first (index == 0) piece of attached content.
-    func test_ShowFirstContentWhenTapTheFirstTime() throws {
+    /// `CR 03.` Tapping each button should output its content to the text input
+    /// When you tap the first time, the app should output the first (index == 0) piece of attached content.
+    /// When you tap the second time, it should output the second piece, etc
+    func test_ShowSpecificContentWhenTapSpecificNumbersOfTimes() throws {
         
         let documentProxyMock = DocumentProxyMock()
         
@@ -76,11 +71,102 @@ class keysCustomKeyboardChallengeTests: XCTestCase {
             try keyboardContentView.inspect().find(button: keyboardContentMock[0].displayText.capitalized).tap()
             
             XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[0].content[0])
+            
+            try keyboardContentView.inspect().find(button: keyboardContentMock[0].displayText.capitalized).tap()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[0].content[1])
+            
+            try keyboardContentView.inspect().find(button: keyboardContentMock[0].displayText.capitalized).tap()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[0].content[2])
         }
         
         ViewHosting.host(view: sut)
         wait(for: [exp], timeout: 0.1)
     }
+    
+    /// `CR 04.` When you've reached the last piece of content, tapping again should cycle back to the beginning
+    func test_ShowFirstContentAgainWhenTapButtonAfterReachedLastContent() throws {
+        
+        let documentProxyMock = DocumentProxyMock()
+        
+        let keyboardContentMock = getMockKeyboardContent()
+        
+        let sut = createKeyboardConbtentWithDocumentProxyMock(content: keyboardContentMock, documentProxy: documentProxyMock)
+        
+        let exp = sut.inspection.inspect { view in
+            
+            let keyboardContentView = try view
+                .actualView()
+                .inspect()
+                .find(KeyboardContentView.self)
+                .actualView()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, String())
+            
+            try keyboardContentView.inspect().find(button: keyboardContentMock[1].displayText.capitalized).tap()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[1].content[0])
+            
+            try keyboardContentView.inspect().find(button: keyboardContentMock[1].displayText.capitalized).tap()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[1].content[1])
+            
+            try keyboardContentView.inspect().find(button: keyboardContentMock[1].displayText.capitalized).tap()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[1].content[2])
+            
+            try keyboardContentView.inspect().find(button: keyboardContentMock[1].displayText.capitalized).tap()
+            
+            XCTAssertEqual(documentProxyMock.textDocumentProxy.documentContextBeforeInput, keyboardContentMock[1].content[0])
+        }
+        
+        ViewHosting.host(view: sut)
+        wait(for: [exp], timeout: 0.1)
+    }
+    
+    /// `CR 05.` Make sure to include a button to exit your custom keyboard and take the user back to the default keyboard
+    func test_ShowExitButtonToChangeInputType() throws {
+        
+        let sut = createKeyboardContentMock()
+        
+        let exp = sut.inspection.inspect { view in
+            XCTAssertNotNil(try view.actualView().inspect().find(button: Localized.Default.Exit))
+        }
+        
+        ViewHosting.host(view: sut)
+        wait(for: [exp], timeout: 0.1)
+    }
+}
+
+class KeysChallengeAdditinalRequirementsTests: XCTestCase {
+    
+    /// `CR 06.` Long-press on a button show's a popup list with all of the content options.
+    /// Selecting one should output it to the text input
+    func test_ShowPopupListWhenLongPressContentButton() throws {
+        
+        /*
+         let keyboardContentMock = getMockKeyboardContent()
+         
+         let sut = createKeyboardConbtentWithDocumentProxyMock(content: keyboardContentMock, documentProxy: DocumentProxyMock())
+         
+         let exp = sut.inspection.inspect { view in
+         
+         let keyboardContentView = try view
+         .actualView()
+         .inspect()
+         .find(KeyboardContentView.self)
+         .actualView()
+         
+         let button = try keyboardContentView.inspect().find(button: keyboardContentMock[1].displayText.capitalized)//.gesture(LongPressGesture())
+         
+         }
+         
+         ViewHosting.host(view: sut)
+         wait(for: [exp], timeout: 0.1)
+         */
+    }
+    
 }
 
 private func createKeyboardConbtentWithDocumentProxyMock(content: [KeyboardContent], documentProxy: DocumentProxyCallbackProtocol) -> KeyboardView<DefaultKeyboardViewModel> {
@@ -90,7 +176,7 @@ private func createKeyboardConbtentWithDocumentProxyMock(content: [KeyboardConte
     return KeyboardView(keyboardViewModel: viewModel)
 }
 
-private func createKeyboardContentMock(content: [KeyboardContent] = getMockKeyboardContent()) -> KeyboardView<DefaultKeyboardViewModel> {
+private func createKeyboardContentMock() -> KeyboardView<DefaultKeyboardViewModel> {
     let keyboardResponse = KeyboardContentResponse(content: getMockKeyboardContent())
     let useCaseDummy = DefaultGetContentUseCase(repository: KeyboardRepositoryStub(result: keyboardResponse))
     let viewModel = DefaultKeyboardViewModel(useCase: useCaseDummy, documentProxyCallback: DocumentProxyMock())
@@ -124,11 +210,6 @@ private class KeyboardRepositoryStub: KeyboardRepository {
         return result
     }
 }
-
-//private class DocumentProxyDummy: DocumentProxyCallbackProtocol {
-//    func insertText(_ text: String) {}
-//    func switchToNextInputMode() {}
-//}
 
 private class DocumentProxyMock: UIInputViewController, DocumentProxyCallbackProtocol {
     func insertText(_ text: String) {
