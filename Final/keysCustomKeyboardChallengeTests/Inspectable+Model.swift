@@ -15,4 +15,3 @@ extension KeyboardView: Inspectable { }
 extension LoadingView: Inspectable { }
 extension KeyboardContentView: Inspectable { }
 extension ErrorView: Inspectable { }
-extension BaseView: Inspectable {}

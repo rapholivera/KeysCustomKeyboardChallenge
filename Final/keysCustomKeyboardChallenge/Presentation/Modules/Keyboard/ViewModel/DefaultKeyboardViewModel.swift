@@ -46,13 +46,11 @@ extension DefaultKeyboardViewModel: KeyboardViewModel {
     var keyboardContentViewState: AnyPublisher<ViewResponse<[KeyboardContent]>, Never> {
         return reloadContentSubject
             .flatMap({ () -> AnyPublisher<ViewResponse<[KeyboardContent]>, Never> in
-                print("FLAT MAP")
                 return self.useCase.getContent().eraseToAnyPublisher()
             }).eraseToAnyPublisher()
     }
     /// `fetchKeyboardContent` are responsible to make a request keyboard content directly, from user inteaction or view lifecycle
     func fetchKeyboardContent() {
-        print("SEND SUBJECT")
         reloadContentSubject.send(())
     }
     /// Exit current keyboard and switches to the next keyboard in the list of user-enabled keyboards.
