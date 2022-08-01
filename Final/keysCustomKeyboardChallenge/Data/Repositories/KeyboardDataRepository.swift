@@ -15,7 +15,7 @@ class KeyboardDataRepository {
 }
 
 extension KeyboardDataRepository: KeyboardRepository {
-    func getContent() -> AnyPublisher<KeyboardContentResponse, Error> {
+    func getContent() -> AnyPublisher<KeyboardContentResponse, HTTPError> {
         return engine.request(target: .getContent)
     }
 }

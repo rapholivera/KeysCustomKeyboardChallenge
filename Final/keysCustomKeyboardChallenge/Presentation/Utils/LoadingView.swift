@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct LoadingView: View {
+    
+    internal let inspection = Inspection<Self>() // 1.
+    
     let loadingMessage: String
     var body: some View {
         VStack {
             ProgressView(loadingMessage)
                 .progressViewStyle(CircularProgressViewStyle())
-        }.padding()   
+        }.padding()
+            .onReceive(inspection.notice) { self.inspection.visit(self, $0) } // 2.
     }
 }
 

@@ -1,0 +1,9 @@
+/* 
+  Error.strings
+  keysCustomKeyboardChallenge
+
+  Created by Raphael Oliveira on 30/07/22.
+  
+*/
+
+"randomError" = "Oops! Something went wrong! \nHelp us improve your experience by sending an error report";

@@ -38,7 +38,7 @@ extension DefaultGetContentUseCase: GetContentUseCase {
     func getContent() -> AnyPublisher<ViewResponse<[KeyboardContent]>, Never> {
         return repository.getContent()
             .map { .success($0.content) }
-            .catch { error in Just(.failure(error.localizedDescription)) }
+            .catch { error in Just(.failure(error.errorMessage)) }
             .receive(on: RunLoop.main)
             .prepend(.loading)
             .eraseToAnyPublisher()

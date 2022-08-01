@@ -10,19 +10,16 @@ import Combine
 
 protocol NetworkRouter {
     associatedtype EndPoint: EndpointTargetType
-    func request<T: Codable>(target: EndPoint) -> AnyPublisher<T, Error>
+    func request<T: Codable>(target: EndPoint) -> AnyPublisher<T, HTTPError>
 }
 
 class NetworkEngineRouter<EndPoint: EndpointTargetType>: NetworkRouter {
     
-    func request<T: Codable>(target: EndPoint) -> AnyPublisher<T, Error> {
+    func request<T: Codable>(target: EndPoint) -> AnyPublisher<T, HTTPError> {
         
         let urlRequest = self.buildRequest(from: target)
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
-            .mapError { error -> HTTPError in
-                return HTTPError.randomError
-            }
             .tryMap { element -> Data in
                 
                 guard let httpResponse = element.response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
@@ -32,9 +29,10 @@ class NetworkEngineRouter<EndPoint: EndpointTargetType>: NetworkRouter {
                 HTTPLogger.log(request: urlRequest, response: httpResponse, data: element.data)
                 
                 return element.data
-            }
-            .decode(type: T.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+            }.decode(type: T.self, decoder: JSONDecoder())
+            .mapError { error -> HTTPError in
+                return HTTPError.randomError
+            }.eraseToAnyPublisher()
     }
     
     private func buildRequest(from route: EndPoint) -> URLRequest {
